@@ -26,9 +26,22 @@
       </a>
 
       <!-- Profile -->
-      <a href="#" class="user-action-links">
-        <i class="fas fa-user-circle"></i>
-      </a>
+      <div class="dropdown">
+        <a href="#" 
+        class="user-action-links" 
+        id="profileDropdown" 
+        role="button" 
+        data-toggle="dropdown" 
+        aria-haspopup="true" 
+        aria-expanded="false">
+          <i class="fas fa-user-circle"></i>
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="profileDropdown">
+          <a class="dropdown-item" routerLink="profile">Profile</a>
+          <a class="dropdown-item" href="#" (click)="auth.signOut()">Logout</a>
+        </div>
+      </div>
     </div>
 
     <!-- Toggler -->
