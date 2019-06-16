@@ -4,13 +4,14 @@ import { LoginComponent } from './login/login.component';
 
 // Bootstrap
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, NavbarComponent],
   imports: [
     CommonModule,
     NgbModule
   ],
-  exports: []
+  exports: [NavbarComponent]
 })
 export class UiModule { }
