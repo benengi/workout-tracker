@@ -1,23 +1,40 @@
-<nav class="navbar navbar-expand-md bg-light fixed-top">
+<nav class="navbar navbar-expand-lg bg-light fixed-top">
   <div class="container-fluid">
     <!-- Brand -->
-    <a href="#" class="navbar-brand">
+    <a href="#" class="navbar-brand navbar-expand-lg">
       <i class="fas fa-dumbbell"></i>
       <span class="brand-name">Mr. Trainer</span>
     </a>
-    <!-- Toggler -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks">
-      <span class="custom-toggler-icon"><i class="fas fa-bars"></i></span>
-    </button>
+
     <!-- Links Go Here -->
-    <div class="collapse navbar-collapse" id="navbarLinks">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a href="#home" class="nav-link">Home</a>
+    <div class="collapse navbar-collapse mr-auto" id="navbarLinks">
+      <ul class="navbar-nav">
+        <li class="nav-item" *ngFor="let link of navLinks">
+          <a [routerLink]="link.path" class="nav-link"> {{ link.text }}</a>
         </li>
       </ul>
     </div>
     
+    <!-- User Actions -->
+    <div class="user-actions ml-auto">
+      <!-- Quick Start a Workout -->
+      <button class="btn btn-warning">Start a Workout</button>
+      
+      <!-- Notifications -->
+      <a href="#" class="user-action-links">
+        <i class="fas fa-bell"></i>
+      </a>
+
+      <!-- Profile -->
+      <a href="#" class="user-action-links">
+        <i class="fas fa-user-circle"></i>
+      </a>
+    </div>
+
+    <!-- Toggler -->
+    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarLinks">
+      <span class="custom-toggler-icon"><i class="fas fa-bars"></i></span>
+    </button>
   </div>
   
 </nav>

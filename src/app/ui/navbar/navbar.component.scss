@@ -2,3 +2,11 @@
   padding: 0.5rem;
   font-family: 'Francois One', sans-serif;
 }
+
+.user-actions {
+  display: flex;
+
+  .user-action-links {
+    font-size: 32px;
+  }
+}
