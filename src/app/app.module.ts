@@ -8,7 +8,6 @@ import { environment } from 'src/environments/environment';
 
 // Other Modules
 import { CoreModule } from './core/core.module';
-import { SharedModule } from './shared/shared.module';
 import { UiModule } from './ui/ui.module';
 
 @NgModule({
@@ -19,7 +18,6 @@ import { UiModule } from './ui/ui.module';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    SharedModule,
     UiModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
