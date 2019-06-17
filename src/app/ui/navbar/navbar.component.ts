@@ -8,11 +8,6 @@ import { AuthService } from 'src/app/core/auth/auth.service';
 })
 export class NavbarComponent implements OnInit {
 
-  private navLinks = [
-    { path: '', text: 'Home'},
-    { path: 'stats', text: 'Stats' },
-    { path: 'about', text: 'About' }
-  ];
   constructor(private auth: AuthService) { }
 
   ngOnInit() {
