@@ -9,8 +9,10 @@ import { AuthService } from 'src/app/core/auth/auth.service';
 export class NavKnownComponent implements OnInit {
 
   private navLinks = [
-    { path: '', text: 'Home'},
+    { path: '', text: 'Workout'},
+    { path: 'exercises', text: 'Exercises' },
     { path: 'stats', text: 'Stats' },
+    { path: 'faq', text: 'FAQ' },
     { path: 'about', text: 'About' }
   ];
 
