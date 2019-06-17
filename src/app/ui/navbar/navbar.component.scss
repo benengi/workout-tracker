@@ -1,12 +1,76 @@
-.brand-name {
-  padding: 0.5rem;
-  font-family: 'Francois One', sans-serif;
+// main color: #26547C
+// contrast: #FCFCFC
+
+.navbar {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+
+  &.solid {
+    background: #363B3F !important;
+  }
+
+  .brand-name {
+    padding: 0.5rem;
+    font-family: 'Francois One', sans-serif;
+  }
+
+  .container-fluid {
+    justify-content: space-between;
+    padding: 0 2rem;
+  }
+
+  .navbar-brand {
+    color: #FCFCFC;
+  }
+
+  .navbar-toggler {
+    color: #FCFCFC;
+  }
+
+  .navbar-nav {
+    .nav-link {
+      color: #FCFCFC;
+      text-transform: uppercase;
+      padding-top: 0.8rem;
+    }
+
+    .nav-link:hover {
+      color: #339AF4;
+    }
+
+    li {
+      padding-right: 0.8rem;
+    }
+  }
+  
 }
 
 .user-actions {
   display: flex;
-
+  
   .user-action-links {
     font-size: 32px;
+    margin: 0 0.4rem;
+    color: #26547C;;
+  }
+
+  button { 
+    background-color: #26547C;
+    border-color: #26547C;
+    color: #FCFCFC;
+  }
+
+}
+
+.dropdown-menu {
+  min-width: 0;
+  top: 112%;
+}
+
+// Mobile Nav
+@media (min-width: 992px) {
+  #mobileNav {
+    display: none !important;
   }
 }
