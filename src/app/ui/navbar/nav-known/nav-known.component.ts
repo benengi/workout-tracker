@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Output, EventEmitter, ElementRef } from '@angular/core';
 import { AuthService } from 'src/app/core/auth/auth.service';
 
 @Component({
@@ -7,6 +7,10 @@ import { AuthService } from 'src/app/core/auth/auth.service';
   styleUrls: ['./nav-known.component.scss']
 })
 export class NavKnownComponent implements OnInit {
+
+  @ViewChild('toggler' , {read: false, static: false}) toggler: ElementRef;
+  @Output() toggleEvent = new EventEmitter<{ collapsed: boolean }>();
+  @Input() clicked: boolean;
 
   private navLinks = [
     { path: '', text: 'Workout'},
@@ -20,6 +24,12 @@ export class NavKnownComponent implements OnInit {
   constructor(private auth: AuthService) { }
 
   ngOnInit() {
+  }
+
+  toggleNav(event: any) {
+    this.toggleEvent.emit( {
+      collapsed: this.toggler.nativeElement.className.includes('collapsed')
+    });
   }
 
 }
