@@ -1,16 +1,15 @@
-import { Component, OnInit, Input, ViewChild, Output, EventEmitter, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Output, EventEmitter, ElementRef, AfterViewInit, Renderer2 } from '@angular/core';
 import { AuthService } from 'src/app/core/auth/auth.service';
+import { SharedService } from 'src/app/core/shared/shared.service';
 
 @Component({
   selector: 'app-nav-known',
   templateUrl: './nav-known.component.html',
   styleUrls: ['./nav-known.component.scss']
 })
-export class NavKnownComponent implements OnInit {
+export class NavKnownComponent implements OnInit, AfterViewInit {
 
   @ViewChild('toggler' , {read: false, static: false}) toggler: ElementRef;
-  @Output() toggleEvent = new EventEmitter<{ collapsed: boolean }>();
-  @Input() clicked: boolean;
 
   private navLinks = [
     { path: '', text: 'Workout'},
@@ -21,15 +20,24 @@ export class NavKnownComponent implements OnInit {
   ];
 
   @Input() user: User;
-  constructor(private auth: AuthService) { }
+  constructor(
+    private auth: AuthService,
+    private shared: SharedService,
+    private renderer: Renderer2) { }
 
   ngOnInit() {
+    this.shared.getPendingToggle().subscribe(isPendingToggle => {
+      if (isPendingToggle) {
+        this.toggler.nativeElement.click();
+        this.shared.setPendingToggle(false);
+      }
+    });
   }
 
-  toggleNav(event: any) {
-    this.toggleEvent.emit( {
-      collapsed: this.toggler.nativeElement.className.includes('collapsed')
-    });
+  ngAfterViewInit(): void {
+    if (this.toggler) {
+      this.shared.setNavbarToggler(this.toggler);
+    }
   }
 
 }

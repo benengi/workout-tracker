@@ -1,21 +1,30 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, ElementRef, OnInit } from '@angular/core';
+import { SharedService } from './core/shared/shared.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+  private navToggler: ElementRef;
   clicked = false;
-  toggled = false;
   title = 'starting-strength';
 
-  onMouseClick(event: MouseEvent) {
-    this.clicked = !this.clicked;
-    console.log(this.clicked);
+  constructor(private shared: SharedService) {
   }
 
-  updateToggleStatus(event: any) {
-    console.log(event);
+  ngOnInit() {
+    this.shared.getNavbarToggler().subscribe(el => {
+      this.navToggler = el;
+    });
+  }
+
+  onMouseClick(event: MouseEvent) {
+    if (this.navToggler && !this.navToggler.nativeElement.classList.contains('collapsed')) {
+      this.shared.setPendingToggle(true);
+    }
+
   }
 }

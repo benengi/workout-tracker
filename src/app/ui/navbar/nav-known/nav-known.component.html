@@ -2,7 +2,11 @@
     <div class="container-fluid">
   
       <!-- Toggler -->
-      <button (click)="toggleNav()" #toggler class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target="#mobileNav">
+      <button #toggler 
+      class="navbar-toggler mr-auto" 
+      type="button" 
+      data-toggle="collapse" 
+      data-target="#mobileNav" appTrackToggle>
         <span class="custom-toggler-icon"><i class="fas fa-bars"></i></span>
       </button>
       

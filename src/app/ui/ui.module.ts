@@ -7,13 +7,21 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NavAnonymousComponent } from './navbar/nav-anonymous/nav-anonymous.component';
 import { NavKnownComponent } from './navbar/nav-known/nav-known.component';
+import { TrackToggleDirective } from './navbar/track-toggler.directive';
 
 @NgModule({
-  declarations: [LoginComponent, NavbarComponent, HomeComponent, NavAnonymousComponent, NavKnownComponent],
+  declarations: [
+    LoginComponent,
+    NavbarComponent,
+    HomeComponent,
+    NavAnonymousComponent,
+    NavKnownComponent,
+    TrackToggleDirective
+  ],
   imports: [
     CommonModule,
     RouterModule
   ],
-  exports: [NavbarComponent]
+  exports: [NavbarComponent, TrackToggleDirective]
 })
 export class UiModule { }

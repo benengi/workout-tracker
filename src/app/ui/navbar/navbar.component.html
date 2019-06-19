@@ -1,8 +1,8 @@
 <div class="navbar" *ngIf="auth.user$ | async as user; else notLoggedIn">
-  <app-nav-known [user]="user" [clicked]="clicked" (toggleEvent)="emitTogglerStatus($event)"></app-nav-known>
+  <app-nav-known [user]="user"></app-nav-known>
 </div>
 <ng-template #notLoggedIn>
-<div class="navbar">
+<div appTrackToggler class="navbar">
   <app-nav-anonymous></app-nav-anonymous>
 </div>
 </ng-template>
