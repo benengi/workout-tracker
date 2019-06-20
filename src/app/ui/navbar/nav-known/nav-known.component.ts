@@ -12,10 +12,11 @@ export class NavKnownComponent implements OnInit, AfterViewInit {
   @ViewChild('toggler' , {read: false, static: false}) toggler: ElementRef;
 
   private navLinks = [
-    { path: '', text: 'Workout'},
-    { path: 'exercises', text: 'Exercises' },
+    { path: '', text: 'Dashboard'},
+    { path: 'training', text: 'Training' },
     { path: 'stats', text: 'Stats' },
-    { path: 'faq', text: 'FAQ' },
+    { path: 'programs', text: 'Programs' },
+    { path: 'calendar', text: 'Calendar' },
     { path: 'about', text: 'About' }
   ];
 
