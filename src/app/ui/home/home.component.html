@@ -1,3 +1,10 @@
-<p>
-  home works!
-</p>
+<div class="row">
+  <div 
+  *ngFor="let card of cards" 
+  [class]="card.gridClasses"
+  >
+    <app-card [cardProperties]="card">
+      <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </app-card>
+  </div>
+</div>
