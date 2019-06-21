@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-6" *ngFor="let program of programs$ | async">
-      <app-program-card [program]="program"></app-program-card>
+      <app-program-card [program]="program" [isActive]="program.id === user.activeProgramId"></app-program-card>
     </div>
 
     <div class="col-sm-6">
