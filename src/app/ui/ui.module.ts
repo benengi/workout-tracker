@@ -9,6 +9,7 @@ import { NavAnonymousComponent } from './navbar/nav-anonymous/nav-anonymous.comp
 import { NavKnownComponent } from './navbar/nav-known/nav-known.component';
 import { TrackToggleDirective } from './navbar/track-toggler.directive';
 import { CardComponent } from './shared/card/card.component';
+import { TrainingComponent } from './training/training.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CardComponent } from './shared/card/card.component';
     NavAnonymousComponent,
     NavKnownComponent,
     TrackToggleDirective,
-    CardComponent
+    CardComponent,
+    TrainingComponent
   ],
   imports: [
     CommonModule,
