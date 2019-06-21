@@ -4,6 +4,7 @@ import { AuthService } from './auth/auth.service';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { SharedService } from './shared/shared.service';
+import { TrainingService } from './training/training.service';
 
 @NgModule({
   declarations: [],
@@ -14,7 +15,8 @@ import { SharedService } from './shared/shared.service';
   ],
   providers: [
     AuthService,
-    SharedService
+    SharedService,
+    TrainingService
   ]
 })
 export class CoreModule { }

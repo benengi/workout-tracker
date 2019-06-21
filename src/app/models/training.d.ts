@@ -1,12 +1,9 @@
 export interface Exercise {
   displayName: string;
   id: string;
-}
-
-export interface TrainingExercise {
-  exerciseId: string;
   uid: string;
   trainingDayId: string;
+  programId: string;
   totalSets: number;
   totalReps: number;
   setsDone: number;
@@ -17,4 +14,10 @@ export interface TrainingDay {
   displayName: string;
   id: string;
   uid: string;
+  programId: string;
+}
+
+export interface Program {
+  displayName: string;
+  id: string;
 }
