@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Exercise, TrainingDay, Program } from 'src/app/models/training';
-import { Observable } from 'rxjs';
+import { Observable, from, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable()
@@ -37,6 +37,13 @@ export class TrainingService {
   }
 
   // Training Days
+
+  createTrainingDay(day: TrainingDay) {
+    return from(this.trainingDayCol.add({
+      ...day
+    }));
+  }
+
   getTrainingDay(id: string): Observable<TrainingDay> {
     return this.trainingDayCol.doc<TrainingDay>(id).valueChanges().pipe(
       map(trainingDay => {
@@ -57,6 +64,20 @@ export class TrainingService {
 
   // Programs
   getProgram(id: string): Observable<Program> {
+    return this.programCol.doc<Program>(id).valueChanges().pipe(
+      map(program => {
+        program.id = id;
+        return program;
+      })
+    );
+  }
+
+  getActiveProgram(user: User): Observable<Program> {
+    const id = user.activeProgramId;
+    if (!id) {
+      return of(null);
+    }
+
     return this.programCol.doc<Program>(id).valueChanges().pipe(
       map(program => {
         program.id = id;

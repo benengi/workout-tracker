@@ -3,4 +3,5 @@ interface User {
   email?: string;
   photoURL?: string;
   displayName?: string;
+  activeProgramId?: string;
 }

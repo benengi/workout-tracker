@@ -10,6 +10,8 @@ import { NavKnownComponent } from './navbar/nav-known/nav-known.component';
 import { TrackToggleDirective } from './navbar/track-toggler.directive';
 import { CardComponent } from './shared/card/card.component';
 import { TrainingComponent } from './training/training.component';
+import { TrainingDayCardComponent } from './training/training-day-card/training-day-card.component';
+import { NewTrainingDayComponent } from './training/new-training-day/new-training-day.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { TrainingComponent } from './training/training.component';
     NavKnownComponent,
     TrackToggleDirective,
     CardComponent,
-    TrainingComponent
+    TrainingComponent,
+    TrainingDayCardComponent,
+    NewTrainingDayComponent
   ],
   imports: [
     CommonModule,
