@@ -1,0 +1,49 @@
+<div *ngIf="auth.user$ | async as user" class="row">
+  <!-- Progress Bar-->
+  <div class="col-12 row">
+    <h3 class="col-sm-12">Progress</h3>
+    <div class="progress-details col-sm-4">
+      <div class="progress">
+        <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Training Day Cards -->
+  <div class="training-days col-sm-12 row">
+    <!-- Day -->
+    <div *ngFor="let day of trainingDays$ | async" class="training-day-card col-sm-6">
+      <app-training-day-card [day]="day"></app-training-day-card>
+    </div>
+    <!-- Add New Training Day -->
+    <div class="training-day-card col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <button class="btn btn-primary" data-toggle="modal" data-target="#trainingDayForm">Add new Training Day</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="modal fade" id="trainingDayForm">
+  <div class="modal-dialog modal-dialog-centered">
+    
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title">Add a new Training Day</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <app-new-training-day></app-new-training-day>
+      </div>
+
+    </div>
+  </div>
+</div>
