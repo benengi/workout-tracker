@@ -12,4 +12,8 @@ export class ProgramComponent implements OnInit {
   ngOnInit() {
   }
 
+  openNewProgramForm() {
+    console.log('Open New Program Form');
+  }
+
 }

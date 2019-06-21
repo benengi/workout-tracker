@@ -41,4 +41,10 @@ export class NavKnownComponent implements OnInit, AfterViewInit {
     }
   }
 
+  onMouseClick(event: MouseEvent) {
+    if (this.toggler && !this.toggler.nativeElement.classList.contains('collapsed')) {
+      this.shared.setPendingToggle(true);
+    }
+  }
+
 }
