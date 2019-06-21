@@ -15,6 +15,8 @@ import { TrainingDayCardComponent } from './training/training-day-card/training-
 import { NewTrainingDayComponent } from './training/new-training-day/new-training-day.component';
 
 import { TrackToggleDirective } from './navbar/track-toggler.directive';
+import { ProgramComponent } from './program/program.component';
+import { ProgramCardComponent } from './program/program-card/program-card.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { TrackToggleDirective } from './navbar/track-toggler.directive';
     CardComponent,
     TrainingComponent,
     TrainingDayCardComponent,
-    NewTrainingDayComponent
+    NewTrainingDayComponent,
+    ProgramComponent,
+    ProgramCardComponent
   ],
   imports: [
     CommonModule,
