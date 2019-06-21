@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { TrainingDay } from 'src/app/models/training';
 
 @Component({
   selector: 'app-new-training-day',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewTrainingDayComponent implements OnInit {
 
-  constructor() { }
+  trainingDay: TrainingDay;
+  trainingDayForm: FormGroup;
+
+  constructor(public fb: FormBuilder) { }
 
   ngOnInit() {
+    this.trainingDayForm = this.fb.group({
+      displayName: '',
+    });
+  }
+
+  submitForm() {
+    this.trainingDay = { ...this.trainingDayForm.value};
   }
 
 }

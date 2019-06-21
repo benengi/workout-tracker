@@ -1,3 +1,10 @@
-<p>
-  It works!
-</p>
+<div class="container-fluid">
+  <form [formGroup]="trainingDayForm">
+    <div class="form-group">
+      <label for="programName">Name</label>
+      <input type="text" class="form-control" formControlName="displayName">
+    </div>
+
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+</div>
