@@ -1,7 +1,8 @@
+<div *ngIf="auth.user$ | async as user"  class="entire-container">
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-6">
-      <app-program-card></app-program-card>
+    <div class="col-sm-6" *ngFor="let program of programs$ | async">
+      <app-program-card [program]="program"></app-program-card>
     </div>
 
     <div class="col-sm-6">
@@ -10,11 +11,30 @@
           <button 
           type="button" 
           class="btn btn-link" 
-          (click)="openNewProgramForm()"><p class="card-text">Create a New Program</p>
+          data-toggle="modal" 
+          data-target="#programForm"><p class="card-text">Create a New Program</p>
           </button>
         </div>
       </div>
     </div>
 
   </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="programForm">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Create Program</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-new-program [user]="user"></app-new-program>
+      </div>
+    </div>
+  </div>
+</div>
 </div>

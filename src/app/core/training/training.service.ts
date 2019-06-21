@@ -63,6 +63,13 @@ export class TrainingService {
   }
 
   // Programs
+
+  createProgram(program: Program): Observable<any> {
+    return from(this.programCol.add({
+      ...program
+    }));
+  }
+
   getProgram(id: string): Observable<Program> {
     return this.programCol.doc<Program>(id).valueChanges().pipe(
       map(program => {
@@ -89,7 +96,7 @@ export class TrainingService {
   getPrograms(uid: string): Observable<Program[]> {
     const programCol: AngularFirestoreCollection<Program>
     = this.afs.collection(
-      'program',
+      'programs',
       ref => ref.where('uid', '==', uid));
 
     return programCol.valueChanges({ idField: 'id' });

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Program } from 'src/app/models/training';
 
 @Component({
   selector: 'app-program-card',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProgramCardComponent implements OnInit {
 
+  @Input() program: Program;
+  @Input() isActive: boolean;
   constructor() { }
 
   ngOnInit() {

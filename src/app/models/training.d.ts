@@ -19,5 +19,7 @@ export interface TrainingDay {
 
 export interface Program {
   displayName: string;
+  description: string;
   id: string;
+  uid: string;
 }
