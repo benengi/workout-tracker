@@ -102,4 +102,18 @@ export class TrainingService {
     return programCol.valueChanges({ idField: 'id' });
   }
 
+  updateProgram(program: Program): Observable<any> {
+    return from(
+      this.programCol.doc<Program>(program.id).update({
+        ...program
+      })
+    );
+  }
+
+  deleteProgram(program: Program): Observable<any>  {
+    return from(
+      this.programCol.doc<Program>(program.id).delete()
+    );
+  }
+
 }
