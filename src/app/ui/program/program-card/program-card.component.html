@@ -1,6 +1,8 @@
 <div *ngIf="program" class="card">
   <div class="card-body">
-    <h5 class="card-title">{{ program.displayName }}</h5>
+    <h5 class="card-title">
+      <a routerLink="/programs/{{program.id}}">{{ program.displayName }}</a>
+    </h5>
     <p class="card-text">{{ program.description }}</p>
     <button type="button" 
     class="btn btn-success" 
