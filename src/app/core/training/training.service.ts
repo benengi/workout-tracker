@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Exercise, TrainingDay, Program } from 'src/app/models/training';
 import { Observable, from, of } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { AuthService } from '../auth/auth.service';
 
 @Injectable()
 export class TrainingService {
@@ -116,4 +117,11 @@ export class TrainingService {
     );
   }
 
+  setActiveProgram(user: User, programId: string): Observable<any> {
+    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
+
+    return from(
+      userRef.update({activeProgramId: programId})
+    );
+  }
 }
