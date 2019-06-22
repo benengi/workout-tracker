@@ -1,0 +1,16 @@
+<div *ngIf="program" class="container-fluid">
+
+    <div *ngIf="!editProgramMode; else editMode;" class="program-header">
+      <h3 class="program-name">{{ program.displayName }}</h3>
+      <button class="btn btn-primary" (click)="toggleEditNameMode()">Edit</button>
+    </div>
+    
+  </div>
+  
+  <ng-template #editMode>
+    <form *ngIf="programNameForm" [formGroup]="programNameForm">
+      <input type="text" formControlName="displayName">
+      <button type="button" class="btn btn-success" (click)="saveName()">Save</button>
+      <button class="btn btn-link" (click)="toggleEditNameMode()">Cancel</button>
+    </form>
+  </ng-template>

@@ -27,29 +27,6 @@ export class ProgramDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.program$ = this.getProgram(this.route.snapshot.paramMap.get('id'));
-    this.program$.subscribe(program => {
-      this.program = program;
-      this.initNameForm(this.program);
-    });
-  }
-
-  saveName() {
-    this.program.displayName = this.programNameForm.value.displayName;
-    this.program = { ...this.program };
-
-    this.training.updateProgram(this.program).subscribe(() => {
-      this.toggleEditNameMode();
-    });
-  }
-
-  toggleEditNameMode() {
-    this.editProgramMode = !this.editProgramMode;
-  }
-
-  initNameForm(program: Program) {
-    this.programNameForm = this.fb.group({
-      displayName: program.displayName
-    });
   }
 
   private getProgram(id: string): Observable<Program> {
