@@ -1,14 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Program } from 'src/app/models/training';
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { TrainingService } from 'src/app/core/training/training.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-program-name',
-  templateUrl: './program-name.component.html',
-  styleUrls: ['./program-name.component.scss']
+  selector: 'app-program-description',
+  templateUrl: './program-description.component.html',
+  styleUrls: ['./program-description.component.scss']
 })
-export class ProgramNameComponent implements OnInit {
+export class ProgramDescriptionComponent implements OnInit {
 
   @Input() program: Program;
 
@@ -25,12 +25,12 @@ export class ProgramNameComponent implements OnInit {
 
   initForm(program: Program) {
     this.programForm = this.fb.group({
-      displayName: program.displayName
+      description: program.description
     });
   }
 
   save() {
-    this.program.displayName = this.programForm.value.displayName;
+    this.program.description = this.programForm.value.description;
     this.program = { ...this.program };
 
     this.training.updateProgram(this.program).subscribe(() => {
@@ -41,4 +41,5 @@ export class ProgramNameComponent implements OnInit {
   toggleEditMode() {
     this.editProgramMode = !this.editProgramMode;
   }
+
 }

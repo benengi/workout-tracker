@@ -20,6 +20,7 @@ import { ProgramCardComponent } from './program/program-card/program-card.compon
 import { NewProgramComponent } from './program/new-program/new-program.component';
 import { ProgramDetailsComponent } from './program/program-details/program-details.component';
 import { ProgramNameComponent } from './program/program-details/program-name/program-name.component';
+import { ProgramDescriptionComponent } from './program/program-details/program-description/program-description.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ProgramNameComponent } from './program/program-details/program-name/pro
     ProgramCardComponent,
     NewProgramComponent,
     ProgramDetailsComponent,
-    ProgramNameComponent
+    ProgramNameComponent,
+    ProgramDescriptionComponent
   ],
   imports: [
     CommonModule,

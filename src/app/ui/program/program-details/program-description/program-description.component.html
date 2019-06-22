@@ -1,13 +1,13 @@
 <div *ngIf="program" class="container-fluid">
   <div *ngIf="!editProgramMode; else editMode;" class="program-header">
-    <h3 class="program-name">{{ program.displayName }}</h3>
+    <p class="program-name">{{ program.description }}</p>
     <button class="btn btn-primary" (click)="toggleEditMode()">Edit</button>
   </div>
 </div>
-  
+
 <ng-template #editMode>
   <form *ngIf="programForm" [formGroup]="programForm">
-    <input type="text" formControlName="displayName">
+    <input type="text" formControlName="description">
     <button type="button" class="btn btn-success" (click)="save()">Save</button>
     <button class="btn btn-link" (click)="toggleEditMode()">Cancel</button>
   </form>
