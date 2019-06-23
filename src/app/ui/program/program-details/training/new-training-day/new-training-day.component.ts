@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { TrainingDay } from 'src/app/models/training';
+import { TrainingDay } from 'src/app/models/training.model';
 import { TrainingService } from 'src/app/core/training/training.service';
 import { AuthService } from 'src/app/core/auth/auth.service';
 

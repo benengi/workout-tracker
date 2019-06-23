@@ -11,6 +11,8 @@ import { TrainingService } from 'src/app/core/training/training.service';
 export class ExerciseComponent implements OnInit {
 
   @Input() exercise: Exercise;
+
+  editMode: boolean;
   exerciseForm: FormGroup;
 
   constructor(private fb: FormBuilder, private training: TrainingService) { }

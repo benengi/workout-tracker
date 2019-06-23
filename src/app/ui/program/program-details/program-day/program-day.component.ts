@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { TrainingDay } from 'src/app/models/training';
+import { TrainingDay } from 'src/app/models/training.model';
 import { TrainingService } from 'src/app/core/training/training.service';
 
 @Component({

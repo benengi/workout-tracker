@@ -6,10 +6,13 @@ import { TrainingComponent } from './ui/program/program-details/training/trainin
 import { ProgramComponent } from './ui/program/program.component';
 import { ProgramDetailsComponent } from './ui/program/program-details/program-details.component';
 import { TrainingDayComponent } from './ui/program/program-details/training-day/training-day.component';
+import { ExerciseComponent } from './ui/program/program-details/training-day/exercise/exercise.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'exercise', component: ExerciseComponent },
+  { path: 'exercise/:id', component: ExerciseComponent },
   { path: 'training', component: TrainingComponent },
   { path: 'training/:id', component: TrainingDayComponent },
   { path: 'programs', component: ProgramComponent },

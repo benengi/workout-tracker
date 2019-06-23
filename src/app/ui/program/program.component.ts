@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/core/auth/auth.service';
 import { TrainingService } from 'src/app/core/training/training.service';
 import { Observable } from 'rxjs';
-import { Program } from 'src/app/models/training';
+import { Program } from 'src/app/models/training.model';
 import { switchMap } from 'rxjs/operators';
 
 @Component({

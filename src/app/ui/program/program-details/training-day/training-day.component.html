@@ -3,17 +3,9 @@
     <div class="col-12">
       <div class="container-fluid">
       <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action">
-          <h4>Bench Press</h4>
-          <p>5 x 5</p>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">
-          <h4>Squat</h4>
-          <p>5 x 5</p>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">
-          <h4>Overhead Press</h4>
-          <p>5 x 5</p>
+        <a href="#" class="list-group-item list-group-item-action" *ngFor="let exercise of exercises$ | async">
+          <h4>{{ exercise.displayName }}</h4>
+          <p>{{ exercise.totalSets }} x {{ exercise.totalReps }}</p>
         </a>
         <a href="#" class="list-group-item list-group-item-action disabled"></a>
       </div>
