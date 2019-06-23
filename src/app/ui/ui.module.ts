@@ -10,9 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { NavAnonymousComponent } from './navbar/nav-anonymous/nav-anonymous.component';
 import { NavKnownComponent } from './navbar/nav-known/nav-known.component';
 import { CardComponent } from './shared/card/card.component';
-import { TrainingComponent } from './training/training.component';
-import { TrainingDayCardComponent } from './training/training-day-card/training-day-card.component';
-import { NewTrainingDayComponent } from './training/new-training-day/new-training-day.component';
+import { TrainingComponent } from './program/training/training.component';
+import { TrainingDayCardComponent } from './program/training/training-day-card/training-day-card.component';
+import { NewTrainingDayComponent } from './program/training/new-training-day/new-training-day.component';
 
 import { TrackToggleDirective } from './navbar/track-toggler.directive';
 import { ProgramComponent } from './program/program.component';
