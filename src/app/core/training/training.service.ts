@@ -62,6 +62,10 @@ export class TrainingService {
     return trainingDayCol.valueChanges({ idField: 'id' });
   }
 
+  deleteTrainingDay(id: string) {
+    return this.trainingDayCol.doc<TrainingDay>(id).delete();
+  }
+
   // Programs
 
   createProgram(program: Program): Observable<any> {

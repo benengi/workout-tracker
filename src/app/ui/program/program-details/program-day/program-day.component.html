@@ -1,7 +1,7 @@
 <div *ngIf="day" class="card">
   <div class="card-body">
-    <h5 class="card-title">{{ day.displayName }}</h5>
-    <a href="#" class="card-link">Start Workout</a>
-    <a href="#" class="card-link">Edit Workout</a>
+    <h5 class="card-title"><a routerLink="">{{ day.displayName }}</a></h5>
+    <button class="btn btn-link card-link">Start Workout</button>
+    <button class="btn btn-link card-link" (click)="deleteDay(day.id)">Delete Training Day</button>
   </div>
 </div>
