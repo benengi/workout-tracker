@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TrainingService } from 'src/app/core/training/training.service';
 import { Observable } from 'rxjs';
-import { Program } from 'src/app/models/training';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Program, TrainingDay } from 'src/app/models/training';
 import { switchMap } from 'rxjs/operators';
 
 @Component({
@@ -15,22 +14,28 @@ export class ProgramDetailsComponent implements OnInit {
 
   program: Program;
   program$: Observable<Program>;
-  programNameForm: FormGroup;
+  trainingDays$: Observable<TrainingDay[]>;
 
   editProgramMode = false;
 
   constructor(
     public route: ActivatedRoute,
-    private training: TrainingService,
-    private fb: FormBuilder
+    private training: TrainingService
   ) { }
 
   ngOnInit() {
     this.program$ = this.getProgram(this.route.snapshot.paramMap.get('id'));
+    this.trainingDays$ = this.getTrainingDays();
   }
 
   private getProgram(id: string): Observable<Program> {
     return this.program$ = this.training.getProgram(id);
+  }
+
+  private getTrainingDays(): Observable<TrainingDay[]> {
+    return this.program$.pipe(
+      switchMap(program => this.training.getTrainingDays(program.id))
+    );
   }
 
 }

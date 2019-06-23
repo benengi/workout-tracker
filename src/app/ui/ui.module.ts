@@ -21,6 +21,8 @@ import { NewProgramComponent } from './program/new-program/new-program.component
 import { ProgramDetailsComponent } from './program/program-details/program-details.component';
 import { ProgramNameComponent } from './program/program-details/program-name/program-name.component';
 import { ProgramDescriptionComponent } from './program/program-details/program-description/program-description.component';
+import { ProgramExerciseComponent } from './program/program-details/program-exercise/program-exercise.component';
+import { ProgramDayComponent } from './program/program-details/program-day/program-day.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { ProgramDescriptionComponent } from './program/program-details/program-d
     NewProgramComponent,
     ProgramDetailsComponent,
     ProgramNameComponent,
-    ProgramDescriptionComponent
+    ProgramDescriptionComponent,
+    ProgramExerciseComponent,
+    ProgramDayComponent
   ],
   imports: [
     CommonModule,
