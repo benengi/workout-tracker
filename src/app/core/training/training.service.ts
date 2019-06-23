@@ -3,7 +3,6 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { Exercise, TrainingDay, Program } from 'src/app/models/training';
 import { Observable, from, of } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { AuthService } from '../auth/auth.service';
 
 @Injectable()
 export class TrainingService {
@@ -57,7 +56,7 @@ export class TrainingService {
   getTrainingDays(programId: string): Observable<TrainingDay[]> {
     const trainingDayCol: AngularFirestoreCollection<TrainingDay>
     = this.afs.collection(
-      'trainingDay',
+      'trainingDays',
       ref => ref.where('programId', '==', programId));
 
     return trainingDayCol.valueChanges({ idField: 'id' });

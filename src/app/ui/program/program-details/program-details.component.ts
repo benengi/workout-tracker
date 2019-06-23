@@ -24,12 +24,11 @@ export class ProgramDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.program$ = this.getProgram(this.route.snapshot.paramMap.get('id'));
-    this.trainingDays$ = this.getTrainingDays();
-  }
-
-  private getProgram(id: string): Observable<Program> {
-    return this.program$ = this.training.getProgram(id);
+    const id = this.route.snapshot.paramMap.get('id');
+    this.training.getProgram(id).subscribe(program => {
+      this.trainingDays$ = this.training.getTrainingDays(program.id);
+      this.program = program;
+    });
   }
 
   private getTrainingDays(): Observable<TrainingDay[]> {

@@ -28,12 +28,4 @@ export class ProgramComponent implements OnInit {
       })
     );
   }
-
-  private getActivePrograms() {
-    return this.auth.user$.pipe(
-      switchMap(user => {
-        return this.training.getActiveProgram(user);
-      })
-    );
-  }
 }
