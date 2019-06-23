@@ -3,7 +3,7 @@ import { AuthService } from 'src/app/core/auth/auth.service';
 import { Observable, from, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { TrainingService } from 'src/app/core/training/training.service';
-import { Program, TrainingDay } from 'src/app/models/training';
+import { Program, TrainingDay } from 'src/app/models/training.model';
 
 @Component({
   selector: 'app-training',

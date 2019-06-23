@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TrainingService } from 'src/app/core/training/training.service';
 import { Observable } from 'rxjs';
-import { Program, TrainingDay } from 'src/app/models/training';
+import { Program, TrainingDay } from 'src/app/models/training.model';
 import { switchMap } from 'rxjs/operators';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { Exercise, TrainingDay, Program } from 'src/app/models/training';
+import { Exercise, TrainingDay, Program } from 'src/app/models/training.model';
 import { Observable, from, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -18,6 +18,12 @@ export class TrainingService {
   }
 
   // Exercises
+  createExercise(exercise: Exercise) {
+    return this.exerciseCol.add({
+      ...exercise
+    });
+  }
+
   getExercise(id: string): Observable<Exercise> {
     return this.exerciseCol.doc<Exercise>(id).valueChanges().pipe(
       map(exercise => {
