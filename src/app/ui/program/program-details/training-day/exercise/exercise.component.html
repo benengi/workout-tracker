@@ -1,12 +1,20 @@
-<div class="container-fluid" *ngIf="exercise">
-  <h4>{{ exercise.displayName }}</h4>
-  <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action">
-      Cras justo odio
-    </a>
-    <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-    <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-    <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-    <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
-  </div>
+<div class="container-fluid" *ngIf="exercise$ | async as exercise">
+
+<h4>{{ exercise.displayName }}</h4>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Set</th>
+      <th scope="col">Reps</th>
+      <th scope="col">Weight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let rep of repCounter(exercise.totalReps); let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ exercise.totalReps }}</td>
+      <td>15 lbs</td>
+    </tr>
+  </tbody>
+</table>
 </div>

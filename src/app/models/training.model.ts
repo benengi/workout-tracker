@@ -1,5 +1,4 @@
-export class Exercise {
-
+export interface Exercise {
     displayName: string;
     id: string;
     uid: string;
@@ -7,9 +6,8 @@ export class Exercise {
     programId: string;
     totalSets: number;
     totalReps: number;
+    weight: number;
     setsDone: number;
-
-    constructor() { }
 }
 
 export interface TrainingDay {

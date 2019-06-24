@@ -26,6 +26,7 @@ import { ProgramDescriptionComponent } from './program/program-details/program-d
 import { ProgramExerciseComponent } from './program/program-details/program-exercise/program-exercise.component';
 import { ProgramDayComponent } from './program/program-details/program-day/program-day.component';
 import { ExerciseComponent } from './program/program-details/training-day/exercise/exercise.component';
+import { NewExerciseComponent } from './program/program-details/training-day/new-exercise/new-exercise.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { ExerciseComponent } from './program/program-details/training-day/exerci
     ProgramExerciseComponent,
     ProgramDayComponent,
     TrainingDayComponent,
-    ExerciseComponent
+    ExerciseComponent,
+    NewExerciseComponent
   ],
   imports: [
     CommonModule,

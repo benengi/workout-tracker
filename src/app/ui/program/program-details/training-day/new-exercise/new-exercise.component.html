@@ -1,0 +1,7 @@
+<form [formGroup]="exerciseForm">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="email" class="form-control" id="name" placeholder="Enter name" formControlName="displayName">
+  </div>
+  <button type="submit" class="btn btn-primary" data-dismiss="modal" (click)="submitForm()">Submit</button>
+</form>

@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Exercise } from 'src/app/models/training.model';
 import { TrainingService } from 'src/app/core/training/training.service';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-exercise',
@@ -10,23 +12,22 @@ import { TrainingService } from 'src/app/core/training/training.service';
 })
 export class ExerciseComponent implements OnInit {
 
-  @Input() exercise: Exercise;
-
+  exercise$: Observable<Exercise>;
   editMode: boolean;
   exerciseForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private training: TrainingService) { }
+  constructor(
+    public route: ActivatedRoute,
+    private training: TrainingService) { }
 
   ngOnInit() {
-    if (!this.exercise) {
-      this.exercise = new Exercise();
-    }
-
-    this.exerciseForm = this.fb.group({
-      ...this.exercise
-    });
+    const id = this.route.snapshot.paramMap.get('id');
+    this.exercise$ = this.training.getExercise(id);
   }
 
+  repCounter(reps: number): Array<any> {
+    return new Array(reps);
+  }
   saveChanges() {
     // this.training.
   }
